@@ -1,3 +1,3 @@
-scrapy crawl mscreate -O ./output/invoices.json
+scrapy crawl mscreate -O ./output/employee-recognition.json
 
-python selenium_download.py --name invoices.json
+python selenium_download.py --name employee-recognition.json

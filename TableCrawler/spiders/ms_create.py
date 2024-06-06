@@ -6,7 +6,7 @@ class TableSpiderMSCreate(scrapy.Spider):
     name = "mscreate"
     start_urls = [
         """
-        https://create.microsoft.com/en-us/templates/invoices
+        https://create.microsoft.com/en-us/templates/employee-recognition
         """
     ]
 
