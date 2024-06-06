@@ -42,7 +42,7 @@ def update_table_name(connection, url, new_table_name):
     # Update the table name of a specific URL
     cursor.execute("UPDATE table_info SET table_name = ? WHERE url = ?", (new_table_name, url))
     connection.commit()
-    print(f"Updated table name for {url} to {new_table_name}")
+    # print(f"Updated table name for {url} to {new_table_name}")
 
 def fetch_undownloaded_url(connection):
     cursor = connection.cursor()
