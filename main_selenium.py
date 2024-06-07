@@ -8,7 +8,7 @@ import pdb
 import time
 import sqlite3
 import platform
-from sql_utils import create_database_and_table, insert_table_info, update_location, fetch_undownloaded_url, update_table_name
+from sql_utils import create_database_and_table, insert_if_not_exists_table_info, update_location, fetch_undownloaded_url, update_table_name, update_table_tags
 from utils import get_newest_file, move_file
 
 
@@ -23,7 +23,7 @@ def get_os_specific_download_path():
         raise NotImplementedError
     
 
-def selenium_fetch_download(conn, source_url, destination_dir):
+def selenium_fetch_download(conn, source_url, destination_dir, tag_name):
     # Setup Chrome options
     chrome_options = Options()
     # chrome_options.add_argument("--headless")  # Ensure GUI is off
@@ -79,9 +79,14 @@ def selenium_fetch_download(conn, source_url, destination_dir):
     # Extract the href attributes
     urls = [element.get_attribute('href') for element in elements]
     
+    # Check if the urls are already downloaded
+
+    print(f"Found {len(urls)} URLs")
+
     for url in urls:
-        insert_table_info(conn, 'undownloaded', url)
-    
+        insert_if_not_exists_table_info(conn, 'undownloaded', url)
+        update_table_tags(conn, url, tag_name)
+
     # Iterate through each href and click the download button
     cur_url = fetch_undownloaded_url(conn)
     while cur_url:
@@ -122,8 +127,8 @@ if __name__ == "__main__":
     source_url = """
     https://create.microsoft.com/en-us/search?query=Business%20budgets&filters=excel
     """
-    name = "payroll".replace(" ", "_").lower()
+    name = "business_budgets".replace(" ", "_").lower()
     destination_dir = f"./storage/{name}"
-    selenium_fetch_download(conn, source_url, destination_dir)
+    selenium_fetch_download(conn, source_url, destination_dir, tag_name=name)
 
 
