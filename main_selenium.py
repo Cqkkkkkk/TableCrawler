@@ -49,10 +49,10 @@ def selenium_fetch_download(conn, source_url, destination_dir):
     # pdb.set_trace()
 
     # Wait for the page to load (adjust the time as necessary)
-    time.sleep(3) # You can use WebDriverWait for a more efficient wait
+    time.sleep(5) # You can use WebDriverWait for a more efficient wait
 
     # Scroll down to load more content until no more new content loads
-    scroll_pause_time = 3
+    scroll_pause_time = 5
     last_height = driver.execute_script("return document.body.scrollHeight")
     print(f"Height: {last_height}")
 
@@ -78,6 +78,7 @@ def selenium_fetch_download(conn, source_url, destination_dir):
 
     # Extract the href attributes
     urls = [element.get_attribute('href') for element in elements]
+    
     for url in urls:
         insert_table_info(conn, 'undownloaded', url)
     
@@ -119,9 +120,9 @@ if __name__ == "__main__":
     create_database_and_table(conn)
 
     source_url = """
-    https://create.microsoft.com/en-us/search?query=invoices&filters=excel
+    https://create.microsoft.com/en-us/search?query=Business%20budgets&filters=excel
     """
-    name = "invoce".replace(" ", "_").lower()
+    name = "payroll".replace(" ", "_").lower()
     destination_dir = f"./storage/{name}"
     selenium_fetch_download(conn, source_url, destination_dir)
 
