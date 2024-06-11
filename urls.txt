@@ -3,3 +3,14 @@ https://create.microsoft.com/en-us/search?query=invoices&filters=excel
 https://create.microsoft.com/en-us/search?query=Payroll&filters=excel
 https://create.microsoft.com/en-us/search?query=Employee%20training&filters=excel
 https://create.microsoft.com/en-us/search?query=Employee%20recognition&filters=excel
+https://create.microsoft.com/en-us/search?query=Hiring%20and%20recruitment&filters=excel
+https://create.microsoft.com/en-us/search?query=Business%20timesheets&filters=excel
+https://create.microsoft.com/en-us/search?query=Contests&filters=excel
+https://create.microsoft.com/en-us/search?query=Open%20house&filters=excel
+https://create.microsoft.com/en-us/search?query=Gantt%20charts&filters=excel
+https://create.microsoft.com/en-us/search?query=Back%20to%20school&filters=excel
+https://create.microsoft.com/en-us/search?query=College%20tools&filters=excel
+https://create.microsoft.com/en-us/search?query=Student%20awards%20and%20certificates&filters=excel
+ https://create.microsoft.com/en-us/search?query=Papers%20and%20reports&filters=excel
+ https://create.microsoft.com/en-us/search?query=Lesson%20plans&filters=excel
+ https://create.microsoft.com/en-us/search?query=education&filters=excel

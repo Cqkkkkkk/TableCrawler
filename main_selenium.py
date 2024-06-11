@@ -125,9 +125,9 @@ if __name__ == "__main__":
     create_database_and_table(conn)
 
     source_url = """
-    https://create.microsoft.com/en-us/search?query=Business%20budgets&filters=excel
+    https://create.microsoft.com/en-us/search?query=education&filters=excel
     """
-    name = "business_budgets".replace(" ", "_").lower()
+    name = "Lesson plans".replace(" ", "_").lower()
     destination_dir = f"./storage/{name}"
     selenium_fetch_download(conn, source_url, destination_dir, tag_name=name)
 
