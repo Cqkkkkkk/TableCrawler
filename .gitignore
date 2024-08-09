@@ -1,2 +1,6 @@
 __pycache__
-tmp_display
+
+.venv/
+.vs/
+images/
+tem_display
